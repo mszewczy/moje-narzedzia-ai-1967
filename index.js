@@ -17,7 +17,7 @@ exports.handleRequest = async (req, res) => {
   }
 
   const action = req.body.action;
-console.log(\`Action received: \${action}\`);
+console.log(`Action received: ${action}`);
 
   let responseMessage = {};
 

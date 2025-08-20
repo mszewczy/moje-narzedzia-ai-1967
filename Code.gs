@@ -1,6 +1,19 @@
 // HERE_PASTE_YOUR_FUNCTION_URL, paste the URL you copied in the previous step.
 const CLOUD_FUNCTION_URL = 'https://europe-central2-moje-narzedzia-ai-1967.cloudfunctions.net/funkcje-dodatku-docs';
 
+// Function to create menu when add-on is installed
+function onInstall(e) {
+  onOpen(e);
+}
+
+// Function to create menu when document is opened
+function onOpen(e) {
+  DocumentApp.getUi().createAddonMenu()
+    .addItem('Show information (Function 1)', 'runShowAlert')
+    .addItem('Insert text (Function 2)', 'runInsertText')
+    .addToUi();
+}
+
 // Functions called from the menu at the top
 function runShowAlert() {
   callCloudFunction('showAlert');

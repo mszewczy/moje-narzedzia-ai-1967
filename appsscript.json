@@ -10,18 +10,8 @@
   ],
   "addOns": {
     "common": {
-"name": "My AI Tools (Cloud)",
-      "logoUrl": "http://idz.do/mszewczy32",
-      "menuItems": [
-        {
-"text": "Show information (Function 1)",
-          "functionName": "runShowAlert"
-        },
-        {
-"text": "Insert text (Function 2)",
-          "functionName": "runInsertText"
-        }
-      ]
+      "name": "My AI Tools (Cloud)",
+      "logoUrl": "http://idz.do/mszewczy32"
     },
     "docs": {
       "homepageTrigger": {
