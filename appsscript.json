@@ -1,0 +1,32 @@
+{
+  "timeZone": "Europe/Warsaw",
+  "dependencies": {},
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/script.container.ui",
+    "https://www.googleapis.com/auth/documents.currentonly",
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
+  "addOns": {
+    "common": {
+"name": "My AI Tools (Cloud)",
+      "logoUrl": "http://idz.do/mszewczy32",
+      "menuItems": [
+        {
+"text": "Show information (Function 1)",
+          "functionName": "runShowAlert"
+        },
+        {
+"text": "Insert text (Function 2)",
+          "functionName": "runInsertText"
+        }
+      ]
+    },
+    "docs": {
+      "homepageTrigger": {
+        "runFunction": "onDocsHomepage"
+      }
+    }
+  }
+}
