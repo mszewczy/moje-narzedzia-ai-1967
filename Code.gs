@@ -4,32 +4,32 @@ const CLOUD_FUNCTION_URL = 'https://europe-central2-moje-narzedzia-ai-1967.cloud
 // Functions called from the menu at the top
 function runShowAlert() {
   callCloudFunction('showAlert');
-DocumentApp.getUi().alert('Hello!', 'Function 1 has been successfully executed.', DocumentApp.getUi().ButtonSet.OK);
+  DocumentApp.getUi().alert('Hello!', 'Function 1 has been successfully executed.', DocumentApp.getUi().ButtonSet.OK);
 }
 
 function runInsertText() {
   callCloudFunction('insertText');
   const cursor = DocumentApp.getActiveDocument().getCursor();
   if (cursor) {
-cursor.insertText('Text inserted by Function 2.');
+    cursor.insertText('Text inserted by Function 2.');
   } else {
-DocumentApp.getActiveDocument().getBody().appendParagraph('Text inserted by Function 2 at the end of the document.');
+    DocumentApp.getActiveDocument().getBody().appendParagraph('Text inserted by Function 2 at the end of the document.');
   }
 }
 
 // Function that builds the sidebar
 function onDocsHomepage() {
   var builder = CardService.newCardBuilder();
-builder.setHeader(CardService.newCardHeader().setTitle('Quick Actions (Cloud)'));
+  builder.setHeader(CardService.newCardHeader().setTitle('Quick Actions (Cloud)'));
   var section = CardService.newCardSection();
-section.addWidget(CardService.newTextParagraph().setText('Use the buttons below to run the functions.'));
+  section.addWidget(CardService.newTextParagraph().setText('Use the buttons below to run the functions.'));
 
   var button1 = CardService.newTextButton()
-.setText('Show information (Function 1)')
+    .setText('Show information (Function 1)')
     .setOnClickAction(CardService.newAction().setFunctionName('runShowAlert'));
 
   var button2 = CardService.newTextButton()
-.setText('Insert text (Function 2)')
+    .setText('Insert text (Function 2)')
     .setOnClickAction(CardService.newAction().setFunctionName('runInsertText'));
 
   section.addWidget(button1);
@@ -52,9 +52,9 @@ function callCloudFunction(actionName) {
 
   try {
     const response = UrlFetchApp.fetch(CLOUD_FUNCTION_URL, options);
-console.log('Response from Cloud Function:', response.getContentText());
+    console.log('Response from Cloud Function:', response.getContentText());
   } catch (e) {
-console.error('Error calling Cloud Function:', e);
-DocumentApp.getUi().alert('An error occurred communicating with the server.');
+    console.error('Error calling Cloud Function:', e);
+    DocumentApp.getUi().alert('An error occurred communicating with the server.');
   }
 }
