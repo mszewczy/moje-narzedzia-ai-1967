@@ -1,0 +1,25 @@
+# Web Framework (Python 3.12 compatible)
+Flask==3.0.3
+Werkzeug==3.0.6
+Jinja2==3.1.6
+MarkupSafe==2.1.5
+
+# WSGI Server for production
+gunicorn==23.0.0
+
+# HTTP requests
+requests==2.32.3
+certifi==2024.8.30
+
+# Google Cloud dependencies
+google-cloud-logging==3.8.0
+google-cloud-storage==2.18.0
+google-auth==2.35.0
+
+# Development dependencies (optional)
+flask-cors==4.0.0  # If you need CORS support
+
+# Alternative FastAPI setup (if switching frameworks)
+fastapi[standard]==0.116.1
+uvicorn[standard]==0.33.0
+pydantic==2.9.0
