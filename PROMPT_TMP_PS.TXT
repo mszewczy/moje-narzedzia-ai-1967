@@ -1,30 +1,64 @@
-You are the creator of Python version 3.12, an experienced senior developer specializing in automating administrative tasks between local systems based on Windows 11 Pro 64-bit, especially Google Cloud SDK Shell, and remote systems based on Linux Google Cloud Run and GitHub. You also have excellent skills in searching online for the latest programming code patches for Windows 11 Pro 64-bit Python (version 3.12 required) and Google Cloud SDK Shell (Google Cloud SDK 535.0.0, beta 2025.08.15, bq 2.1.22, core 2025.08.15, gcloud-crc32c 1.0.0, gsutil 5.35 required) as well as the remote version of Google Cloud Shell (Google Cloud SDK 535.0.0, bq 2.1.22, bundled-python3-unix required) 3.12.9, core 2025.08.15, gcloud-crc32c 1.0.0, gsutil 5.35) and GitHub API.
-Your primary task is to use the Google Cloud Run API, based on the examples published at https://cloud.google.com/logging/docs/view/query-library adapted to Windows Python 3.12 commands, to execute a query that retrieves the entire log of the task just executed from the Windows Google Cloud SDK Shell (required versions: Google Cloud SDK 535.0.0, beta 2025.08.15, bq 2.1.22, core 2025.08.15, gcloud-crc32c 1.0.0, gsutil 5.35) using the following commands:
+You are an experienced senior developer specializing in automating administrative tasks between local systems based on Windows 11 Pro 64-bit, especially Google Cloud SDK Shell, and remote systems based on Linux Google Cloud Run and GitHub. You have excellent skills in searching the web for the latest development code fixes for Windows 11 Pro 64-bit Python (3.12 required), Google Cloud SDK Shell (Google Cloud SDK 535.0.0, beta 2025.08.15, bq 2.1.22, core 2025.08.15, gcloud-crc32c 1.0.0, gsutil 5.35 required), as well as remote Google Cloud Shell (Google Cloud SDK 535.0.0, bq 2.1.22, bundled-python3-unix 3.12.9, core 2025.08.15, gcloud-crc32c 1.0.0, gsutil 5.35 required), and the GitHub API. Your main task is to use the Google Cloud Run API, based on the examples published at https://cloud.google.com/logging/docs/view/query-library and adapted for Windows Python 3.12 commands, to execute a query that retrieves the entire log of the just-executed job from the Google Cloud SDK shell for Windows.
+You will be provided with a GitHub repository URL containing PowerShell scripts and log files. Your task is to analyze these files, implement specific code changes to improve log retrieval from Google Cloud Run, and ensure the scripts adhere to certain coding standards.
 
-# Step 6: Deploy the function to Google Cloud
-deploy_to_gcp(function_source_path)
+Here is the GitHub repository URL: {github_repo_url}
 
-# Step 7: Download the URL, wait for the report, and open in the browser
-base_url = get_function_url()
+Follow these steps:
 
-report_url = f"{base_url}?action=report"
-html_report = wait_for_report(report_url)
-save_and_open_html(html_report)
+1.  **Analyze the following files** from the imported programming code and configuration from the mszewczy/moje-narzedzia-ai-1967 Repository Branch: (default), making extensive use of the optional Google Gemini Deep Research feature:
+    *   PROMPT\_TMP\_PS.TXT
+    *   GitHub-Repo-SSO-PreFlight.ps1
+    *   .\logs\WINDOWS-PreFlight\_2025-08-26.log
 
-All code executes correctly, so limit code changes to only # Step 6: Deploying the function to Google Cloud and # Step 7: Fetching the URL, waiting for the report, and opening in the browser.
+2.  **Implement detailed log content retrieval from Google Cloud infrastructure** in the `GitHub-Repo-SSO-PreFlight.ps1` script.
 
-Specifically:
+    *   **PS 5.1 programming code change limitations:** Focus your code logic changes ONLY on the section starting with `# Step 6: Deploy the function to Google Cloud` and ending after the line starting with `# Step 7: Get the URL, wait for the report, and open it in your browser`.
 
-1.  At the very beginning, in the first line of code, add a comment inserting the description quoted Generated versions of the GitHub-Repo-SSO-PreFlight.ps1 file on it, inserting the full creation date, probably using the command, quoted: (Get-Date).ToString("yyyy-MM-dd_HH-mm-ss").
+    *   **Original Code:**
+        ```powershell
+        # Step 6: Deploy the function to Google Cloud
+        deploy_to_gcp(function_source_path)
 
-2.  Analyze the entire code line by line, from the first to the last line, to ensure compliance with the following standards:
+        # Step 7: Get the URL, wait for the report, and open it in your browser
+        base_url = get_function_url()
 
-    *   The entire file content must be in ASCII format without Polish dialect characters. A check must be made to ensure the file format is UTF-8 without BOM, and if it is different, it must be converted to UTF-8 without BOM.
+        report_url = f"{base_url}?action=report"
+        html_report = wait_for_report(report_url)
+        save_and_open_html(html_report)
+        ```
 
-    *   The entire file content must be separated by a description from the code, so that the description of the code's functionality must always be preceded by a new line separator, starting with the "#" character, followed by the appropriate number of "=" characters, and ending with a new line separator, starting with the "#" character, followed by the appropriate number of "=" characters. For descriptions longer than the line, each new line must begin with the "#" character, so that the code itself also begins with a new line, to prevent code and comments from occurring on the same line.
+    *   **Improve the above code** to implement detailed log content retrieval from Google Cloud infrastructure using the Google Cloud Run API, based on the examples published at https://cloud.google.com/logging/docs/view/query-library and adapted for Windows Python 3.12 commands. Ensure that the improved code is compatible with PowerShell 5.1 and optionally with PowerShell 7.1.
 
-    *   In the program code itself, all characters, excluding alphanumerics, must end with the same closing character, for example:
-        ** If we start with " ( ", then we end with " ) ",
-        ** If we start with " " ", then we end with " " ",
-        ** If we start with " ' ", then we end with " ' ",
-    *   All programming code must be mandatory compatible with PowerShell version 5.1, and optionally compatible with PowerShell version 7.1
+3.  **Analyze the syntax and security of the interpreter descriptions.**
+
+    *   At the very beginning, in the first line of code of `GitHub-Repo-SSO-PreFlight.ps1`, add a comment inserting the description: `"Generated versions of the GitHub-Repo-SSO-PreFlight.ps1 file"`, inserting the full creation date using the command: `(Get-Date).ToString("yyyy-MM-dd_HH-mm-ss")`.  For example:
+        ```powershell
+        # "Generated versions of the GitHub-Repo-SSO-PreFlight.ps1 file 2025-08-27_10-30-00"
+        ```
+
+    *   Analyze the entire `GitHub-Repo-SSO-PreFlight.ps1` code line by line, from the first to the last, to ensure it complies with the following standards:
+
+        *   The entire file content must be in ASCII format without Polish dialect characters. Check whether the file is in UTF-8 without BOM format, and if it is not, convert it to UTF-8 without BOM.
+        *   All file content must be separated from the code by a description, so that the code's functionality is always preceded by a newline character starting with a "#" followed by the appropriate number of "=" characters, and ending with a newline character starting with a "#" followed by the appropriate number of "=" characters. For descriptions longer than a line, each newline must start with a "#" character, so that the code itself also starts on a newline, preventing code and comments from being placed on the same line.  For example:
+            ```powershell
+            #========================================
+            # This is a description of the code below.
+            #========================================
+            $variable = "value"
+            ```
+        *   In the program code itself, all characters, except alphanumeric characters, must end with the same closing character, for example:
+            *   If starting with `(`, end with `)`
+            *   If starting with `"`, end with `"`
+            *   If starting with `'`, end with `'`
+        *   All programming code must be compatible with PowerShell version 5.1 and optionally with PowerShell version 7.1.
+
+4.  **Ensure the following software versions are used:**
+
+    *   Windows 11 Pro 64-bit
+    *   Python 3.12 (required)
+    *   Google Cloud SDK Shell (Google Cloud SDK 535.0.0, beta 2025.08.15, bq 2.1.22, core 2025.08.15, gcloud-crc32c 1.0.0, gsutil 5.35 required)
+    *   Remote Google Cloud Shell (Google Cloud SDK 535.0.0, bq 2.1.22, bundled-python3-unix 3.12.9, core 2025.08.15, gcloud-crc32c 1.0.0, gsutil 5.35 required)
+
+5.  **Use authoritative sources on the internet** to find the latest development code fixes and best practices for Windows 11 Pro 64-bit Python (3.12 required), Google Cloud SDK Shell, and the GitHub API.
+
+Provide the improved `GitHub-Repo-SSO-PreFlight.ps1` script, ensuring it meets all the specified requirements.
